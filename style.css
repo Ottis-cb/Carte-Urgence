@@ -1,0 +1,798 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #0e171d;
+    color: #eaf1f2;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+main {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 24px;
+    gap: 30px;
+    position: relative;
+}
+nav {
+    width: 100%;
+    min-height: 60px;
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    background: #0e171d;
+    border-bottom: 1px solid #25363e;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: #eaf1f2;
+    overflow-wrap: anywhere;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: #8fa3ab;
+}
+
+
+
+.hero {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+ .intro p {
+    width: 100%;
+    max-width: 620px;
+    line-height: 1.6;
+
+ }
+
+ .first-button {
+    background: #5fd6b4;
+    border: 1px solid #5fd6b4;
+ }
+ .first-button a {
+    color: #111111;
+    text-decoration: none;
+    font-weight: 700;
+ }
+
+ .second-button {
+    background: #25363e;
+    color: white;
+    font-weight: 700;
+    border: 1px solid #3b505a;
+ }
+
+ .intro button {
+    min-height: 44px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    transition: .2s;
+    border: none;
+ }
+ .intro button:hover {
+    transform: translateY(-2px);
+ }
+ .first-button:hover {
+    background: #7ce5c7;
+ }
+ .second-button:hover {
+    background: #314650;
+ }
+ 
+.cartes {
+    flex: 0 1 440px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+.carte {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #25363e;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid #25363e;
+    border-radius: 15px;
+    background: #152229;
+    overflow-wrap: anywhere;
+}
+.infos-medicale {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    min-width: 0;
+}
+.groupe-sanguin{
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 130px;
+    padding: 12px;
+    border: 1px solid #5fd6b4;
+    border-radius: 15px;
+    background: #5fd6b4;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.groupe-sanguin span{
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+}
+.groupe-sanguin p{
+    font-size: 0.85rem;
+    color: #111111;
+}
+.maladies{
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 130px;
+    padding: 12px;
+    border: 1px solid #25363e;
+    border-radius: 15px;
+    background: #1b2b33;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    overflow-wrap: anywhere;
+}
+
+.pinVerification {
+    display: flex;
+    justify-content: space-between;
+}
+.pinVerification input {
+    width: 65%;
+}
+#pinVerification {
+    display: none;
+}
+.pinVerification button {
+    min-height: 44px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    transition: .2s;
+    display: none;
+}
+
+.invisible {
+    display: none;
+}
+
+
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 0;
+}
+.progress {
+    width: 100%;
+    background: #25363e;
+    height: 8px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.progress-bar {
+    width: 0%;
+    background: #5fd6b4;
+    border-radius: 15px;
+    height: 100%;
+    transition: .8s;
+}
+
+.description .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.description button {
+    min-height: 44px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    transition: .2s;
+}
+.description button:hover {
+    transform: translateY(-1px);
+}
+.brown {
+    background: #f0b35a;
+    color: #111111;
+}
+.second {
+    background: #152229;
+    color: white;
+    border-color: #25363e;
+}
+.second:hover{
+    background: #25363e;
+}
+
+
+.form {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    background: #152229;
+    border-radius: 18px;
+    border: 1px solid #25363e;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.form p {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.numero {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+.numero div {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    background: #5fd6b4;
+    color: #111111;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+.numero h2 {
+    color: white;
+}
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.flexbox > div {
+    flex: 1 1 220px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.titre {
+    color: #8fa3ab;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+input , select, textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    border-radius: 10px;
+    padding: 10px 12px;
+    border: 1px solid #3b505a;
+    background: #25363e;
+    color: #111111;
+    font: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    height: auto;
+    resize: vertical;
+}
+input::placeholder, textarea::placeholder {
+    color: #a7b6bc;
+    opacity: 1;
+}
+select {
+    min-width: 0;
+    cursor: pointer;
+
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #5fd6b4;
+    outline-offset: 3px;
+}
+.sang {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+option {
+    color: #111111;
+    background: #ffffff;
+}
+
+.sang .flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.sang .flex input[type="checkbox"] {
+    flex: 0 0 18px;
+    width: 18px;
+    min-height: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #5fd6b4;
+}
+.sang .flex div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.sang .flex label {
+    color: #eaf1f2;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+.flex-1 {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 6px;
+}
+
+.flex-1 textarea {
+    min-height: 90px;
+    height: auto;
+}
+
+
+
+.avantages {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 24px;
+    border-bottom: 1px solid #25363e;
+}
+
+.avantage{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+}
+.avantage div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.avantage img {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.avantage h3 {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.avantage p {
+    font-size: 0.9rem;
+}
+
+.astuce {
+    width: 100%;
+    max-width: 1440px;
+    margin: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.astuce h2, .questions h2{
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    line-height: 1.2;
+    color: white;
+    overflow-wrap: anywhere;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    min-height: 0;
+}
+
+.card {
+    min-width: 0;
+    padding: 20px;
+    background: #152229;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+    border: 1px solid #25363e;
+    overflow-wrap: anywhere;
+}
+
+.card div {
+    background: #5fd6b4;
+    color: #111111;
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 5px;
+}
+.card span {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: white;
+}
+.questions {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 24px;
+    min-width: 0;
+}
+.questions h2 {
+    margin-bottom: 20px;
+}
+.questions > div {
+    border-bottom: 1px solid #25363e;
+    padding: 20px 0;
+}
+
+.questions > div > div {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.questions > div p {
+    color: #eaf1f2;
+    overflow-wrap: anywhere;
+}
+
+.questions > div > .plusinfos{
+    flex: 0 0 auto;
+    font-size: .8rem;
+    color: #8fa3ab;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.questions > div > .actif {
+    display: none;
+}
+
+.qr-code {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 15px;
+    border-top: 1px dashed #25363e;
+    min-width: 0;
+}
+
+.qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 320px;
+    height: 320px;
+    border: 1px solid #25363e;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.qr-code p {
+    min-width: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #25363e;
+    border-radius: 12px;
+    background: #1b2b33;
+}
+
+.contact > div > div > span {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #5fd6b4;
+    color: #111111;
+    font-weight: 700;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.contact p {
+    overflow-wrap: anywhere;
+}
+.contact button {
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    background: #5fd6b4;
+    color: #111111;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.resume {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-left: 3px solid #5fd6b4;
+    border-radius: 0 8px 8px 0;
+    background: #1b2b33;
+    overflow-wrap: anywhere;
+}
+
+.resume span {
+    display: block;
+    margin-bottom: 4px;
+    color: #8fa3ab;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.resume p{
+    color: #eaf1f2;
+    font-size: 0.95rem;
+}
+
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        gap: 28px;
+        padding: 28px 28px;
+    }
+
+    .hero, .cartes {
+        width: 100%;
+        flex: 1 1 auto;
+    }
+    .cartes {
+        position: static;
+    }
+    .avantages {
+        grid-template-columns: repeat(2, minmax(0 , 1fr));
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .astuce, .questions {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 16px;
+    }
+    main {
+        padding: 24px 16px;
+        gap: 24px;
+    }
+    h1 {
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+        letter-spacing: -1px;
+    }
+    .hreo {
+        gap: 24px;
+    }
+    .intro {
+        gap: 16px;
+    }
+    .intro .buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .intro button {
+        width: 100%;
+    }
+    .form {
+        padding: 16px;
+        border-radius: 14px;
+    }
+    .flexbox {
+        flex-direction: column;
+    }
+    .flexbox > div {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .infos-medicale {
+        gap: 8px;
+    }
+    .groupe-sanguin {
+        flex-basis: 90px;
+        padding: 8px;
+    }
+    .maladies {
+        padding: 10px;
+    }
+    .carte {
+        padding: 14px;
+    }
+    .qr-code {
+        align-items: flex-start;
+    }
+    .qr {
+        flex-basis: 76px;
+        width: 76px;
+        height: 76px;
+    }
+    .contact > div {
+        flex-wrap: wrap;
+    }
+
+    .avantages {
+        grid-template-columns: minmax(0 ,1fr);
+        padding: 20px 16px;
+        gap: 18px;
+    }
+    .cards {
+        grid-template-columns: minmax(0 ,1fr);
+    }
+    .astuce, .questions{
+        padding: 24px 16px;
+    }
+    .description .buttons {
+        flex-direction: column;
+    }
+    .description button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .infos-medicale {
+        flex-direction: column;
+    }
+
+    .groupe-sanguin {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: 90px;
+    }
+
+    .maladies {
+        width: 100%;
+    }
+
+    .qr-code {
+        flex-direction: column;
+    }
+    .qr {
+        flex-basis: auto;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .carte, .carte * {
+        visibility: visible;
+    }
+
+    .carte {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+
