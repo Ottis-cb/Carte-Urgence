@@ -5,16 +5,13 @@ const  donneur = document.getElementById("donneur");
 const  allergie = document.getElementById("allergie");
 const  traitement = document.getElementById("traitement");
 const  maladie = document.getElementById("maladie");
+const  contact = document.getElementById("contact");
 
 const  proche1 = document.getElementById("proche1");
 const numProche1 = document.getElementById("numproche1");
 
 const proche2 = document.getElementById("proche2");
 const numproche2 = document.getElementById("numproche2");
-
-const medecin = document.getElementById("medecin");
-const infos = document.getElementById("infos");
-const pin = document.getElementById("pin");
 
 
 const nomCA = document.getElementById("nomCA");
@@ -30,8 +27,6 @@ const numproche2CA = document.getElementById("numproche2CA");
 const appeler = document.getElementById("appeler");
 const traitementCA = document.getElementById("traitementCA");
 const probleme = document.getElementById("probleme");
-const medecinCA = document.getElementById("medecinCA");
-const infosCA = document.getElementById("infosCA");
 
 const secours = document.getElementById("secours");
 const imprimer = document.getElementById("imprimer");
@@ -39,63 +34,59 @@ const effacer = document.getElementById("effacer");
 
 const invisible = document.getElementById("invisible");
 
-const pinVerification = document.getElementById('pinVerification');
-const deverouiller = document.getElementById('deverouiller');
-const messagePin = document.getElementById('messagePin');
-
 
 //Permet de mettre à jour directement les infos en remplissant les formulaires
 
 nom.addEventListener("input", () => {
     nomCA.textContent = nom.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 naissance.addEventListener("input", () => {
-    naissanceCA.textContent = naissance.value;
+    naissanceCA.textContent = naissance.value + " ans";
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 groupeSanguin.addEventListener("input", () => {
     groupeSanguinCA.textContent = groupeSanguin.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 allergie.addEventListener("input", () => {
     allergieCA.textContent = allergie.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 proche1.addEventListener("input", () => {
     proche1CA.textContent = proche1.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 numProche1.addEventListener("input", () => {
     numproche1CA.textContent = numProche1.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 proche2.addEventListener("input", () => {
     proche2CA.textContent = proche2.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 numproche2.addEventListener("input", () => {
     numproche2CA.textContent = numproche2.value;
-});
-pin.addEventListener("input", () => {
-    if (pin.value !== "")
-    {
-        pinVerification.style.display = "block";
-        deverouiller.style.display = "block";
-    }else {
-        pinVerification.style.display = "none";
-        deverouiller.style.display = "none";
-        pinVerification.value = "";
-        messagePin.textContent = "";
-        invisible.style.display = "none"
-        carteDeverouillee = false;
-    }
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 
 traitement.addEventListener("input", () => {
     traitementCA.textContent = traitement.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 maladie.addEventListener("input", () => {
     maladieCA.textContent = maladie.value;
-});
-medecin.addEventListener("input", () => {
-    medecinCA.textContent = medecin.value;
-});
-infos.addEventListener("input", () => {
-    infosCA.textContent = infos.value;
+    contact.textContent = "Contact à prevenir";
+    invisible.style.display = "block";
 });
 
 
@@ -104,25 +95,25 @@ infos.addEventListener("input", () => {
 
 const exemple = document.getElementById("exemple");
 exemple.addEventListener('click', () => {
-     nom.value ="Rowan Atkinson";
-     naissance.value = "2002-12-2";
+
+    contact.textContent = "Contact à prevenir";
+
+
+    nom.value ="Rowan Atkinson";
+    naissance.value = 18;
     groupeSanguin.value= "O+";
     allergie.value="pénicilline";
     proche1.value="Maman";
-    numProche1.value="034 34 334 34";
+    numProche1.value="0343433434";
     proche2.value="Papa";
-    numproche2.value="032 32 332 32";
-    traitement.value="Ventoline en cas de crise";
+    numproche2.value="0323233232";
+    traitement.value="Ventoline";
     maladie.value="Asthme";
-    medecin.value="Dr Jean Martin";
-    infos.value="Vit seul. En cas d'urgence, prévenir ma famille.";
-    pin.value =""
-
     
     invisible.style.display = "block";
 
     nomCA.textContent = nom.value;
-    naissanceCA.textContent = naissance.value;
+    naissanceCA.textContent = naissance.value + " ans";
     groupeSanguinCA.textContent = groupeSanguin.value;
     allergieCA.textContent = allergie.value;
     proche1CA.textContent = proche1.value;
@@ -131,8 +122,6 @@ exemple.addEventListener('click', () => {
     numproche2CA.textContent = numproche2.value;
     traitementCA.textContent = traitement.value;
     maladieCA.textContent = maladie.value;
-    medecinCA.textContent = medecin.value;
-    infosCA.textContent = infos.value;
 
     enregistrerInfos();
     progressBar();
@@ -145,6 +134,8 @@ effacer.addEventListener('click', () => {
 
     localStorage.removeItem("carteUrgence");
 
+    contact.textContent = "";
+
     nom.value ="";
     naissance.value = "";
     groupeSanguin.value= "";
@@ -155,13 +146,7 @@ effacer.addEventListener('click', () => {
     numproche2.value="";
     traitement.value="";
     maladie.value="";
-    medecin.value="";
-    infos.value="";
-    pin.value ="";
-    pinVerification.style.display = "none";
-    deverouiller.style.display ="none";
-    deverouiller.textContent = "Déverouiller";
-    messagePin.textContent = "";
+
     invisible.style.display = "none";
 
     nomCA.textContent = "";
@@ -174,8 +159,6 @@ effacer.addEventListener('click', () => {
     numproche2CA.textContent = "";
     traitementCA.textContent = "";
     maladieCA.textContent = "";
-    medecinCA.textContent = "";
-    infosCA.textContent = "";
 
     invisible.style.display = "none";
     progressBar();
@@ -204,7 +187,7 @@ const valeurPourcentage = document.getElementById("pourcentage");
 const infosManquantes = document.getElementById("infosManquantes");
 function progressBar() {
     let remplis = 0;
-    let total = 13;
+    let total = 10;
 
     if( nom.value !== "") remplis++;
     if( naissance.value !== "") remplis++;
@@ -216,9 +199,6 @@ function progressBar() {
     if( numproche2.value!== "") remplis++;
     if( traitement.value !== "") remplis++;
     if( maladie.value !== "") remplis++;
-    if( medecin.value !== "") remplis++;
-    if( infos.value !== "") remplis++;
-    if( pin.value!== "") remplis++;
     
     let pourcentage = (remplis / total) * 100;
 
@@ -245,10 +225,6 @@ function progressBar() {
     numproche2.addEventListener('input', progressBar);
     traitement.addEventListener('input', progressBar);
     maladie.addEventListener('input', progressBar);
-    medecin.addEventListener('input', progressBar);
-    infos.addEventListener('input', progressBar);
-    pin.addEventListener('input', progressBar);
-
 
 //fonction perme
 
@@ -263,10 +239,7 @@ function enregistrerInfos(){
         proche1: proche1.value,
         numProche1: numProche1.value,
         proche2: proche2.value,
-        numproche2: numproche2.value,
-        medecin: medecin.value,
-        infos: infos.value,
-        pin: pin.value
+        numproche2: numproche2.value
     };
 
     localStorage.setItem("carteUrgence", JSON.stringify(donnees));
@@ -283,10 +256,6 @@ function enregistrerInfos(){
     numproche2.addEventListener('input', enregistrerInfos);
     traitement.addEventListener('input', enregistrerInfos);
     maladie.addEventListener('input', enregistrerInfos);
-    medecin.addEventListener('input', enregistrerInfos);
-    infos.addEventListener('input', enregistrerInfos);
-    pin.addEventListener('input', enregistrerInfos);
-
 
 
 //permettant de récuperer les infos enregistrées
@@ -296,19 +265,16 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
     if (donneesSauvegardees !== null) {
         const donnees = JSON.parse(donneesSauvegardees);
 
-        nom.value = donnees.nom;
-        naissance.value = donnees.naissance;
-    groupeSanguin.value=  donnees.groupeSanguin;
-    allergie.value= donnees.allergie;
-    proche1.value= donnees.proche1;
-    numProche1.value= donnees.numProche1;
-    proche2.value= donnees.proche2;
-    numproche2.value= donnees.numproche2;
-    traitement.value= donnees.traitement;
-    maladie.value= donnees.maladie;
-    medecin.value= donnees.medecin;
-    infos.value= donnees.infos;
-    pin.value = donnees.pin;
+        nom.value = donnees.nom || "";
+        naissance.value = donnees.naissance || "";
+    groupeSanguin.value=  donnees.groupeSanguin || "";
+    allergie.value= donnees.allergie || "";
+    proche1.value= donnees.proche1 || "";
+    numProche1.value= donnees.numProche1 || "";
+    proche2.value= donnees.proche2 || "";
+    numproche2.value= donnees.numproche2 || "";
+    traitement.value= donnees.traitement || "";
+    maladie.value= donnees.maladie || "";
 
     nomCA.textContent = nom.value || "Nom";
     naissanceCA.textContent = naissance.value;
@@ -320,70 +286,26 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
     numproche2CA.textContent = numproche2.value;
     traitementCA.textContent = traitement.value;
     maladieCA.textContent = maladie.value;
-    medecinCA.textContent = medecin.value;
-    infosCA.textContent = infos.value;
-    if (pin.value ===""){
-        invisible.style.display = "block";
-    }else {
-        invisible.style.display = "none";
-    }
-    carteDeverouillee = false;
     progressBar();
     }
 
-
-    carteDeverouillee = false;
     //permettant l'impression de la carte rn cliquant sur le bouton imprimmer
 
     imprimer.addEventListener('click', () => {
         window.print();
     })
-
-    //Verification du PIN
-    deverouiller.addEventListener('click', () => {
-        if(carteDeverouillee === false) {
-            if(pin.value === ""){
-            invisible.style.display = 'block';
-            carteDeverouillee = true;
-            deverouiller.textContent = "verouiller";
-            messagePin.textContent = "Aucun PIN défini. La carte est accessible.";
-            messagePin.style.color = "orange";
-            return;
-            }
-            if (pin.value !== "" && pinVerification.value === pin.value) {
-                invisible.style.display = 'block';
-                carteDeverouillee = true;
-                deverouiller.textContent = "Verouiller";
-                messagePin.textContent = "PIN correct !";
-                messagePin.style.color = "green";
-            } else {
-                messagePin.textContent = "PIN incorrect.";
-                messagePin.style.color = "red";
-            }
-        }else {
-            invisible.style.display ="none";
-            carteDeverouillee = false;
-            deverouiller.textContent = "Deverouiller";
-            pinVerification.value ="";
-            messagePin.textContent = "Carte verouillée.";
-            messagePin.style.color = "red";
-        }
-        
-    });
-
+    
 
     function genererQRCode(){
         const qrcode = document.getElementById("qrcode");
-
         qrcode.innerHTML = "";
-
         let informationsqr = "";
 
         if (nom.value !== ""){
             informationsqr += "Nom : " + nom.value + "\n";
         }
         if (naissance.value !== ""){
-            informationsqr += "Date de naissance : " + naissance.value + "\n";
+            informationsqr += "Ages: " + naissance.value + "ans" + "\n";
         }
         if (groupeSanguin.value !== ""){
             informationsqr += "Groupe sanguin : " + groupeSanguin.value + "\n";
@@ -394,9 +316,6 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
         if (traitement.value !== ""){
             informationsqr += "Traitement : " + traitement.value + "\n";
         }
-        if (medecin.value !== ""){
-            informationsqr += "Médecin traitant : " + medecin.value + "\n";
-        }
         if (maladie.value !== ""){
             informationsqr += "Maladie : " + maladie.value + "\n";
         }
@@ -404,16 +323,13 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
             informationsqr += "Contact1 : " + proche1.value + "\n";
         }
         if (numProche1.value !== ""){
-            informationsqr += ": " + numProche1.value + "\n";
+            informationsqr += numProche1.value + "\n";
         }
         if (proche2.value !== ""){
-            informationsqr += "Contact1 : " + proche2.value + "\n";
+            informationsqr += "Contact2 : " + proche2.value + "\n";
         }
         if (numproche2.value !== ""){
-            informationsqr += ": " + numproche2.value + "\n";
-        }
-        if (infos.value !== ""){
-            informationsqr += "Infos: " + infos.value + "\n";
+            informationsqr +=  numproche2.value + "\n";
         }
 
         if (informationsqr !== "") {
@@ -437,8 +353,4 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
     numproche2.addEventListener('input', genererQRCode);
     traitement.addEventListener('input', genererQRCode);
     maladie.addEventListener('input', genererQRCode);
-    medecin.addEventListener('input', genererQRCode);
-    infos.addEventListener('input', genererQRCode);
-    pin.addEventListener('input', genererQRCode);
-
     genererQRCode();

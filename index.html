@@ -34,8 +34,8 @@
                         <input type="text" placeholder="Prénom Nom" required id="nom">
                     </div>
                     <div>
-                        <span class="titre">Année de naissance</span>
-                        <input type="date" placeholder="2008" id="naissance">
+                        <span class="titre">Age</span>
+                        <input type="number" placeholder="15" id="naissance" required>
                     </div>
                 </div>
                 <div class="sang">
@@ -95,33 +95,6 @@
                 </div>
             </div>
 
-            <div class="form three">
-                <div class="numero">
-                    <div>3</div>
-                    <h2>Autres infos utiles</h2>
-                </div>
-                <div class="flex-1">
-                    <span class="titre">Médecin traitant</span>
-                    <input type="text" placeholder="Nom et téléphone" id="medecin">
-                </div>
-                <div class="flex-1">
-                    <span class="titre">A savoir</span>
-                    <textarea name="" id="infos" placeholder="Enfant à récuperer à l'école, animal seul à la maison"></textarea>
-                </div>
-
-            </div>
-
-            <div class="form four">
-                <div class="numero">
-                    <div>4</div>
-                    <h2>Protection</h2>
-                </div>
-                <div class="flex-1">
-                    <span class="titre">Code PIN (facultatif)</span>
-                    <input type="password" id="pin" placeholder="Entrez votre code PIN" pattern="[0-9]{4}" maxlength="4">
-                </div>
-                <p>Avec un PIN, la fiche publique n'affiche que l'essentiel, le reste s'ouvre avec le code</p>
-            </div>
         </section>
         <section class="cartes">
             <div class="carte">
@@ -142,13 +115,7 @@
                         <p id="allergieCA">Aucune renseignée </p>
                     </div>
                 </div>
-                <p id="contact">Ajoute un contact à prevenir</p>
-
-                <div class="pinVerification">
-                    <input type="password" id="pinVerification" placeholder="Entrez votre code PIN" pattern="[0-9]{4}" maxlength="4">
-                    <button id="deverouiller">Déverouiller</button>
-                </div>
-                <p id="messagePin"></p>
+                <p id="contact"></p>
 
                 <div class="invisible" id="invisible">
                     <div class="contact">
@@ -160,7 +127,7 @@
                                     <p id="numproche1CA">0380615517</p>
                                 </div>
                             </div>
-                            <button id="Appeler">Appeler</button>
+                            <button id="Appeler">Contact 1</button>
                         </div>
 
                         <div>
@@ -171,7 +138,7 @@
                                     <p id="numproche2CA">0380615517</p>
                                 </div>
                             </div>
-                            <button id="Appeler">Appeler</button>
+                            <button id="Appeler">Contact 2</button>
                         </div>
                     </div>
             
@@ -303,7 +270,7 @@
     <div class="qr" id="qrcode"></div>
     
 
-    <script src="qrcode.min.js"></script>
-    <script src="script.js"></script>
+    <script src="./qrcode.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

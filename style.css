@@ -70,13 +70,43 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 24px;
+    padding: 20px 0;
+}
+.intro h1 {
+    max-width: 650px;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    color: #f1f7f8;
 }
  .intro p {
     width: 100%;
-    max-width: 620px;
-    line-height: 1.6;
+    max-width: 580px;
+    line-height: 1.8;
+    color: #a8bbc2;
 
+ }
+ .intro .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+ }
+
+ .intro button {
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    font: inherit;
+    transition: .2s;
+    border: none;
+ }
+
+ .intro button:hover {
+    transform: translateY(-3px);
  }
 
  .first-button {
@@ -90,24 +120,11 @@ p {
  }
 
  .second-button {
-    background: #25363e;
+    background: #1b2b33;
     color: white;
-    font-weight: 700;
-    border: 1px solid #3b505a;
+    border: 1px solid #405660;
  }
 
- .intro button {
-    min-height: 44px;
-    padding: 10px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    font: inherit;
-    transition: .2s;
-    border: none;
- }
- .intro button:hover {
-    transform: translateY(-2px);
- }
  .first-button:hover {
     background: #7ce5c7;
  }
@@ -128,15 +145,24 @@ p {
 .carte {
     width: 100%;
     min-width: 0;
-    padding: 20px;
-    border: 1px solid #25363e;
+    padding: 26px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    border: 1px solid #25363e;
-    border-radius: 15px;
-    background: #152229;
+    gap: 20px;
+    border: 1px solid #38505a;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #192b33, #122027);
     overflow-wrap: anywhere;
+}
+.carte > span:first-child {
+    align-self: flex-start;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: rgba(240, 179, 90, 0.12);
+    color: #f0b35a;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
 }
 .infos-medicale {
     display: flex;
@@ -147,12 +173,12 @@ p {
 .groupe-sanguin{
     flex: 1 1 0;
     min-width: 0;
-    min-height: 130px;
-    padding: 12px;
-    border: 1px solid #5fd6b4;
-    border-radius: 15px;
+    min-height: 145px;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
     background: #5fd6b4;
-    color: #111111;
+    color: #102027;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,48 +197,29 @@ p {
 .maladies{
     flex: 1 1 0;
     min-width: 0;
-    min-height: 130px;
-    padding: 12px;
-    border: 1px solid #25363e;
-    border-radius: 15px;
-    background: #1b2b33;
+    min-height: 145px;
+    padding: 16px;
+    border: 1px solid #3b535e;
+    border-radius: 16px;
+    background: #1d3038;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
-    gap: 8px;
+    gap: 10px;
     overflow-wrap: anywhere;
 }
-
-.pinVerification {
-    display: flex;
-    justify-content: space-between;
-}
-.pinVerification input {
-    width: 65%;
-}
-#pinVerification {
-    display: none;
-}
-.pinVerification button {
-    min-height: 44px;
-    padding: 10px 15px;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font: inherit;
-    cursor: pointer;
-    border: none;
+.maladies p:first-child {
+    color: #f0b35a;
     font-weight: 700;
-    transition: .2s;
-    display: none;
+}
+.maladies p:last-child {
+    color: #eaf1f2;
+    font-size: 0.95rem;
 }
 
 .invisible {
     display: none;
 }
-
-
-
 
 .description {
     display: flex;
@@ -222,17 +229,17 @@ p {
 }
 .progress {
     width: 100%;
-    background: #25363e;
-    height: 8px;
-    border-radius: 15px;
+    background: #253941;
+    height: 10px;
+    border-radius: 20px;
     overflow: hidden;
 }
 .progress-bar {
     width: 0%;
-    background: #5fd6b4;
-    border-radius: 15px;
+    background: linear-gradient(90deg, #5fd6b4, #8be8ce);
+    border-radius: 20px;
     height: 100%;
-    transition: .8s;
+    transition: .4s;
 }
 
 .description .buttons {
@@ -271,10 +278,11 @@ p {
 .form {
     width: 100%;
     min-width: 0;
-    padding: 20px;
-    background: #152229;
+    padding: 26px;
+    background: #15242b;
     border-radius: 18px;
-    border: 1px solid #25363e;
+    border: 1px solid #2c424b;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -287,23 +295,26 @@ p {
 .numero {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #2c424b;
     min-width: 0;
 }
 .numero div {
     flex: 0 0 30px;
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 34px;
     background: #5fd6b4;
-    color: #111111;
-    border-radius: 8px;
+    color: #102027;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
+    font-weight: 800;
 }
 .numero h2 {
-    color: white;
+    color: #f1f7f8;
+    font-size: 1.2rem;
 }
 .flexbox {
     display: flex;
@@ -318,21 +329,21 @@ p {
     gap: 6px;
 }
 .titre {
-    color: #8fa3ab;
+    color: #d0dde1;
     font-size: 0.9rem;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 input , select, textarea {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    min-height: 44px;
+    min-height: 48px;
     border-radius: 10px;
-    padding: 10px 12px;
-    border: 1px solid #3b505a;
+    padding: 12px 14px;
+    border: 1px solid #3b535e;
     background: #25363e;
-    color: #111111;
+    color: #f1f7f8;
     font: inherit;
 }
 
@@ -342,7 +353,7 @@ textarea {
     resize: vertical;
 }
 input::placeholder, textarea::placeholder {
-    color: #a7b6bc;
+    color: #91a5ad;
     opacity: 1;
 }
 select {
@@ -556,7 +567,7 @@ option {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 60px auto;
     width: 320px;
     height: 320px;
     border: 1px solid #25363e;
@@ -574,19 +585,34 @@ option {
 .contact {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .contact > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     min-width: 0;
-    padding: 12px;
-    border: 1px solid #25363e;
-    border-radius: 12px;
-    background: #1b2b33;
+    padding: 15px;
+    border: 1px solid #344c56;
+    border-radius: 14px;
+    background: #1b2d35;
+    transition: .2s;
+}
+
+.contact > div:hover {
+    transform: translateY(-3px);
+}
+.contact button {
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    background: #5fd6b4;
+    color: #102027;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .contact > div > div > span {
@@ -609,37 +635,32 @@ option {
 .contact p {
     overflow-wrap: anywhere;
 }
-.contact button {
-    flex: 0 0 auto;
-    padding: 8px 10px;
-    border: none;
-    border-radius: 8px;
-    background: #5fd6b4;
-    color: #111111;
-    font-weight: 700;
-    cursor: pointer;
-}
+
 
 .resume {
     margin-top: 12px;
-    padding: 10px 12px;
-    border-left: 3px solid #5fd6b4;
-    border-radius: 0 8px 8px 0;
-    background: #1b2b33;
+    padding: 14px 16px;
+    border: 1px solid #304751;
+    border-left: 4px solid #5fd6b4;
+    border-radius: 10px;
+    background: #1b2d35;
     overflow-wrap: anywhere;
 }
 
 .resume span {
     display: block;
-    margin-bottom: 4px;
-    color: #8fa3ab;
-    font-size: 0.85rem;
-    font-weight: 600;
+    margin-bottom: 6px;
+    color: #9db1b9;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .resume p{
     color: #eaf1f2;
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 
