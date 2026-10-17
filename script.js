@@ -28,7 +28,7 @@ const appeler = document.getElementById("appeler");
 const traitementCA = document.getElementById("traitementCA");
 const probleme = document.getElementById("probleme");
 
-const secours = document.getElementById("secours");
+const download = document.getElementById("download");
 const imprimer = document.getElementById("imprimer");
 const effacer = document.getElementById("effacer");
 
@@ -164,19 +164,32 @@ effacer.addEventListener('click', () => {
     progressBar();
 })
 
+// Afficher plus d'infos en cliquant sur plus
 
-const signe1 =document.getElementById('signe1');
-const plus1 =document.getElementById('plus1');
+document.getElementById('signe one').addEventListener('click', function(){
 
-signe1.addEventListener('click', () => {
-    plus1.textContent= "Non, Tout est enregistré dans ton navigateur, sur cet appareil."
+    let r = document.querySelector(".reponse.one");
+    r.classList.toggle('active');
+    this.textContent = r.classList.contains("active") ? "-" : "+";
 });
 
-const signe2 =document.getElementById('signe2');
-const plus2 =document.getElementById('plus2');
 
-signe2.addEventListener('click', () => {
-    plus2.textContent= "Ton nom, ton groupe sanguin, tes allergies et ton premier contact.il est lisible par toute personne qui le scanne"
+document.getElementById('signe two').addEventListener('click', function(){
+    let r = document.querySelector(".reponse.two");
+    r.classList.toggle('active');
+    this.textContent = r.classList.contains("active") ? "-" : "+";
+});
+
+document.getElementById('signe three').addEventListener('click', function(){
+    let r = document.querySelector(".reponse.three");
+    r.classList.toggle('active');
+    this.textContent = r.classList.contains("active") ? "-" : "+";
+});
+
+document.getElementById('signe four').addEventListener('click', function(){
+    let r = document.querySelector(".reponse.four");
+    r.classList.toggle('active');
+    this.textContent = r.classList.contains("active") ? "-" : "+";
 });
 
 
@@ -335,8 +348,8 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
         if (informationsqr !== "") {
             new QRCode(qrcode, {
                 text: informationsqr,
-                width: 300,
-                height: 300
+                width: 180,
+                height: 180
             });
         }
     }
@@ -354,3 +367,31 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
     traitement.addEventListener('input', genererQRCode);
     maladie.addEventListener('input', genererQRCode);
     genererQRCode();
+
+    //permettant le téléchargement du code qr
+    download.addEventListener('click', function(){
+   const canvas = qrcode.querySelector('canvas');
+   if (!canvas) {
+      alert('Veuillez générer un Qr code avant de le télécharger.');
+      return;
+   }
+   canvas.toBlob(function (blob){
+      if(!blob){
+         alert("Impossible de générer l'image");
+         return;
+      }
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+
+      link.href = url;
+      link.download = 'QRCode_Urgence.png'
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(function(){
+         URL.revokeObjectURL(url);
+      }, 1000)
+   }, 'image/png');
+});

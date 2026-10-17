@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte d'urgence</title>
+    <link rel="stylesheet" href="./aos.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <nav data-aos="fade-down" data-aos-duration="600">
         <h2>Carte d'urgence</h2>
         <h2>O</h2>
     </nav>
     <main>
         <section class="hero">
-            <div class="intro">
+            <div class="intro" data-aos="fade-right" data-aos-duration="800">
                 <h1>Ta fiche vitale, lisible en deux secondes.</h1>
                 <p>Allergies ,groupe sanguin,personnes à prévenir. Tu la remplis une fois, 
                     les secours la lisent d'un scan, sans mot de passe.
@@ -23,7 +24,7 @@
                     <button class="second-button" id="exemple">Voir un exemple</button>
                 </div>
             </div>
-            <div class="form one" id="form">
+            <div class="form one" id="form" data-aos="fade-left" data-aos-duration="800">
                 <div class="numero">
                     <div>1</div>
                     <h2>Toi</h2>
@@ -68,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="form two">
+            <div class="form two" data-aos="fade-up" data-aos-duration="700">
                 <div class="numero">
                     <div>2</div>
                     <h2>Personnes à prévenir</h2>
@@ -97,7 +98,7 @@
 
         </section>
         <section class="cartes">
-            <div class="carte">
+            <div class="carte" data-aos="fade-up" data-aos-duration="800">
     
                 <span>URGENCE MEDICALE</span>
                 <div>
@@ -159,6 +160,7 @@
                         <p id="infosCA">Chat seul à la maison</p>
                     </div>
                 </div>
+                <div class="qr" id="qrcode"></div>
                 <div class="qr-code">
                     <p>Scanne ce Qr code pour lire l'essentiel, Mets-le en fond 
                         d'écran verouillé ou au dos de ton téléphone.
@@ -166,13 +168,13 @@
                 </div>
                 
             </div>
-            <div class="description">
-                <div class="progress">
+            <div class="description" data-aos="fade-up" data-aos-duration="600">
+                <div class="progress" >
                     <div id="progress-bar" class="progress-bar"></div>
                 </div>
                 <p>Fiche complète à <span id="pourcentage">0%.</span><span id="infosManquantes"> Remplissez les informations manquantes</span></p>
                 <div class="buttons">
-                    <button class="brown" id="secours">Mode secours</button>
+                    <button class="brown" id="download">Télecharger le QRCode</button>
                     <button class="second" id="imprimer">Imprimer</button>
                     <button class="second" id="effacer">Effacer</button>
                 </div>
@@ -183,22 +185,22 @@
             </div>
         </section>
     </main>
-    <div class="avantages">
-        <div class="avantage">
+    <div class="avantages" data-aos="fade-up" data-aos-duration="700">
+        <div class="avantage" data-aos="fade-up" data-aos-duration="600">
             <img src="/ressources/verified-svgrepo-com.svg" alt="logo verified">
             <div>
                 <h3>Gratuit, sans compte</h3>
                 <p>Aucune inscription pour créer la fiche</p>
             </div>
         </div>
-        <div class="avantage">
+        <div class="avantage" data-aos="fade-up" data-aos-duration="600">
             <img src="/ressources/locked-svgrepo-com (1).svg" alt="logo cadenas">
             <div>
                 <h3>Données sur ton appareil</h3>
                 <p>Rien n'est envoyé sur un serveur</p>
             </div>
         </div>
-        <div class="avantage">
+        <div class="avantage" data-aos="fade-up" data-aos-duration="600">
             <img src="/ressources/view-svgrepo-com.svg" alt="logo oeuil">
             <div>
                 <h3>Lisible sans mot de passe</h3>
@@ -207,24 +209,24 @@
         </div>
     </div>
 
-    <div class="astuce">
+    <div class="astuce" data-aos="fade-up" data-aos-duration="700">
         <h2>Comment ça marche</h2>
         <div class="cards">
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-duration="600">
                 <div>1</div>
                 <span>Remplis ta fiche</span>
                 <p>Nom, allergies, groupe sanguin et personnes à prévenir.
                     Deux minutes suffisent.
                 </p>
             </div>
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-duration="600">
                 <div>2</div>
                 <span>Garde le QR code chez toi</span>
                 <p>En fond d'écran verouillé, au dos du téléphone ou dans 
                     ton porte feuille.
                 </p>
             </div>
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-duration="600">
                 <div>3</div>
                 <span>Les secours scannent</span>
                 <p>Ils lisent l'essentiel sans code. Le reste reste protégé par ton PIN.
@@ -233,44 +235,51 @@
         </div>
     </div>
 
-    <div class="questions">
+    <div class="questions" data-aos="fade-up" data-aos-duration="700">
         <h2>Questions fréquentes</h2>
         <div>
             <div>
                 <p>Mes données sont-elles envoyées quelque part?</p>
-                <p id="signe1">+</p>
+                <div id="signe one">+</div>
             </div>
-            <p id="plus1" class="plusinfos"></p>
+            <p class="reponse one">Non, Tout est enregistré dans ton navigateur, sur cet appareil.</p>
         </div>
 
         <div>
             <div>
                 <p>Que contient le QR code?</p>
-                <p id="signe2">+</p>
+                <div id="signe two">+</div>
             </div>
-            <p id="plus2" class="plusinfos"></p>
+            <p class="reponse two">on nom, ton groupe sanguin, tes allergies et ton premier contact.il est lisible par toute personne qui le scanne</p>
         </div>
 
         <div>
             <div>
                 <p>Le PIN protède t-il mes données?</p>
-                <p id="signe3" class="plusinfos">+</p>
+                <div id="signe three" class="plusinfos">+</div>
             </div>
-            <p id="plus3"></p>
+            <p class="reponse three">Non, Tout est enregistré dans ton navigateur, sur cet appareil.</p>
         </div>
 
         <div>
             <div>
                 <p>Et si je change de téléphone?</p>
-                <p id="signe4" class="plusinfos">+</p>
+                <div id="signe four" class="plusinfos">+</div>
             </div>
-            <p id="plus4"></p>
+            <p class="reponse four">Non, Tout est enregistré dans ton navigateur, sur cet appareil.</p>
         </div>
     </div>
-    <div class="qr" id="qrcode"></div>
     
 
     <script src="./qrcode.min.js"></script>
     <script src="./script.js"></script>
+    <script src="./aos.js"></script>
+    <script>
+        AOS.init({
+            once: false,
+            offset: 200,
+            mirror: true
+        });
+    </script>
 </body>
 </html>
