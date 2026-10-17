@@ -370,28 +370,13 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
 
     //permettant le téléchargement du code qr
     download.addEventListener('click', function(){
-   const canvas = qrcode.querySelector('canvas');
+   let canvas = document.querySelector("#qrcode canvas");
    if (!canvas) {
       alert('Veuillez générer un Qr code avant de le télécharger.');
       return;
    }
-   canvas.toBlob(function (blob){
-      if(!blob){
-         alert("Impossible de générer l'image");
-         return;
-      }
-      const url = URL.createObjectURL(blob);
-
-      const link = document.createElement('a');
-
-      link.href = url;
-      link.download = 'QRCode_Urgence.png'
-
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      setTimeout(function(){
-         URL.revokeObjectURL(url);
-      }, 1000)
-   }, 'image/png');
+   let lien = document.createElement("a");
+   lien.href = canvas.toDataURL('image/png');
+   lien.download = "QRCode_Urgence_by_ottis.png";
+   lien.click();
 });
