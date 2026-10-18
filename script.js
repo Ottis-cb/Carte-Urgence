@@ -35,6 +35,19 @@ const effacer = document.getElementById("effacer");
 const invisible = document.getElementById("invisible");
 
 
+
+
+const mode = document.getElementById('mode');
+
+mode.addEventListener("click", function(){
+    document.body.classList.toggle('light');
+    if(document.body.classList.contains("light")){
+        mode.innerHTML='<img src="./ressources/moon-svgrepo-com.svg" alt="ligth logo">'; 
+    }else {
+       mode.innerHTML='<img src="./ressources/light-svgrepo-com.svg" alt="logo soleil">';
+    }
+});
+
 //Permet de mettre à jour directement les infos en remplissant les formulaires
 
 nom.addEventListener("input", () => {
@@ -380,3 +393,6 @@ const donneesSauvegardees = localStorage.getItem("carteUrgence");
    lien.download = "QRCode_Urgence_by_ottis.png";
    lien.click();
 });
+
+
+

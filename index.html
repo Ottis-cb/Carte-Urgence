@@ -10,14 +10,16 @@
 <body>
     <nav data-aos="fade-down" data-aos-duration="600">
         <h2>Carte d'urgence</h2>
-        <h2></h2>
+        <div id="mode">
+            <img src="./ressources/light-svgrepo-com.svg" alt="logo soleil">
+        </div>
     </nav>
     <main>
         <section class="hero">
             <div class="intro" data-aos="fade-right" data-aos-duration="800">
                 <h1>Ta fiche vitale, lisible en deux secondes.</h1>
-                <p>Allergies ,groupe sanguin,personnes à prévenir. Tu la remplis une fois, 
-                    les secours la lisent d'un scan, sans mot de passe.
+                <p>Une carte d'urgence médicale pour accéder rapidement 
+                à vos informations essentielles en cas d'urgence.
                 </p>
                 <div class="buttons">
                     <button class="first-button"> <a href="#form">Créer ma fiche</a></button>
@@ -41,7 +43,7 @@
                 </div>
                 <div class="sang">
                     <span class="titre">Groupe sanguin</span>
-                    <div class="flex">    
+                    <div class="flex">
                         <select name="groupe-sanguin" id="groupe-sanguin">
                             <option value="">Choisir un groupe sanguin</option>
                             <option value="A+">A+</option>
@@ -80,8 +82,8 @@
                         <input type="text" placeholder="Prénom Nom" required id="proche1">
                     </div>
                     <div>
-                        <span class="titre">Téléphone</span>
-                        <input type="tel" placeholder="038 06 155 17" id="numproche1" required>
+                        <span class="titre">Téléphone 1</span>
+                        <input type="tel" placeholder="038 38 338 38" id="numproche1" required>
                     </div>
                 </div>
                 <div class="flexbox">
@@ -90,8 +92,8 @@
                         <input type="text" placeholder="Nom (lien)" id="proche2">
                     </div>
                     <div>
-                        <span class="titre">Téléphone</span>
-                        <input type="tel" placeholder="038 06 155 17" id="numproche2">
+                        <span class="titre">Téléphone 2</span>
+                        <input type="tel" placeholder="037 37 337 37" id="numproche2">
                     </div>
                 </div>
             </div>
@@ -141,7 +143,7 @@
                             </div>
                             <button id="Appeler">Contact 2</button>
                         </div>
-                    </div>
+                    </div>  
             
                     <div class="resume">
                         <span>Traitements en cours</span>
@@ -170,10 +172,6 @@
                     <button class="second" id="imprimer">Imprimer</button>
                     <button class="second" id="effacer">Effacer</button>
                 </div>
-                <p>Tes données restent sur cet appareil. Le PIN est un simple verrou
-                    d'affichage, pas un chiffrement: n'ajoute pas de numéro de sécurité
-                    sociale. Le QR Code contient seulement l'essentiel (nom, groupe sanguin, allergies, contact 1).
-                </p>
             </div>
         </section>
     </main>
@@ -242,7 +240,7 @@
                 <p>Que contient le QR code?</p>
                 <div id="signe two">+</div>
             </div>
-            <p class="reponse two">Ton nom, ton groupe sanguin, tes allergies et ton premier contact.il est lisible par toute personne qui le scanne</p>
+            <p class="reponse two">Ton nom, ton groupe sanguin, tes allergies et ton premier contact.il est lisible par toute personne qui le scanne.</p>
         </div>
 
         <div>
@@ -261,7 +259,6 @@
             <p class="reponse four">Recrée ta fiche sur le nouvel appareil. La synchronisation par compte n'est pas encore disponible.</p>
         </div>
     </div>
-    
 
     <script src="./qrcode.min.js"></script>
     <script src="./script.js"></script>

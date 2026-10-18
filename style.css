@@ -42,6 +42,10 @@ nav {
     border-bottom: 1px solid #25363e;
 }
 
+nav img {
+    width: 40px;
+    height: 40px;
+}
 h1 {
     font-size: clamp(2rem, 4vw, 3.5rem);
     line-height: 1.1;
@@ -389,14 +393,6 @@ option {
     min-width: 0;
 }
 
-.sang .flex input[type="checkbox"] {
-    flex: 0 0 18px;
-    width: 18px;
-    min-height: 18px;
-    height: 18px;
-    margin: 0;
-    accent-color: #5fd6b4;
-}
 .sang .flex div {
     display: flex;
     align-items: center;
@@ -672,6 +668,63 @@ option {
     line-height: 1.6;
 }
 
+.light {
+    background: #f8fafc;
+    color: #0f172a;
+}
+.light nav{
+    background: #ffff;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+}
+.light .form,.light .carte,.light .card{
+    background: #ffff;
+    color: #0f172a;
+    border-color: #e2e8f0;
+}
+.light .hero {
+    color: #0f172a;
+
+}
+.light h1,.light h2,.light h3{
+    color: #0f172a;
+}
+.light p , .light label{
+    color: #475569;
+}
+
+.light input, .light select, .light textarea, .light .contact div, .light .invisible .resume, .light .infos-medicale .maladies {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #e2e8f0;
+}
+.light #allergieCA {
+    color: #0f172a;
+}
+.light .invisible .resume {
+    border-left-color: #5fd6b4;
+}
+.light .questions > div > .reponse{
+    color: #475569;
+}
+.light .questions > div > div > p {
+    color: #0f172a;
+}
+.light .questions > div, .light .avantages, .light .form .numero {
+    border-color: #e2e8f0;
+}
+.light .progress, .light #imprimer, .light #effacer, .light #exemple{
+    background: #ffff;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+}
+.light span, .light #proche1CA, .light #proche2CA{
+    color: #0f172a;
+}
+.light .avantage img{
+    filter: brightness(0)
+    saturate(100%);
+}
 
 @media (max-width: 900px) {
     main {
@@ -706,6 +759,10 @@ option {
 @media (max-width: 600px) {
     nav {
         padding: 12px 16px;
+    }
+    nav img {
+        width: 35px;
+        height: 35px;
     }
     main {
         padding: 24px 16px;
